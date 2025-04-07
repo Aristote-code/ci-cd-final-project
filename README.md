@@ -1,38 +1,88 @@
-# CI/CD Tools and Practices Final Project Template
+# CI/CD Final Project
 
-This repository contains the template to be used for the Final Project for the Coursera course **CI/CD Tools and Practices**.
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![Python 3.9](https://img.shields.io/badge/Python-3.9-green.svg)](https://shields.io/)
+[![CI/CD Pipeline](https://github.com/yourusername/ci-cd-final-project/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/yourusername/ci-cd-final-project/actions/workflows/ci-cd.yml)
 
-## Usage
+This project demonstrates a complete CI/CD pipeline implementation using Tekton, GitHub Actions, and Kubernetes. It serves as a practical example of modern DevOps practices and continuous integration/continuous deployment workflows.
 
-This repository is to be used as a template to create your own repository in your own GitHub account. No need to Fork it as it has been set up as a Template. This will avoid confusion when making Pull Requests in the future.
+## Features
 
-From the GitHub **Code** page, press the green **Use this template** button to create your own repository from this template.
+- Automated testing and quality checks
+- Containerized application deployment
+- Kubernetes integration
+- GitHub Actions workflow automation
+- Tekton pipeline implementation
 
-Name your repo: `ci-cd-final-project`.
+## Prerequisites
+
+- Python 3.9+
+- Docker
+- Kubernetes cluster
+- Tekton installation
+- GitHub account
 
 ## Setup
 
-After entering the lab environment you will need to run the `setup.sh` script in the `./bin` folder to install the prerequisite software.
+1. Clone the repository:
 
 ```bash
-bash bin/setup.sh
+git clone https://github.com/yourusername/ci-cd-final-project.git
+cd ci-cd-final-project
 ```
 
-Then you must exit the shell and start a new one for the Python virtual environment to be activated.
+2. Create and activate a virtual environment:
 
 ```bash
-exit
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
 
-## Tasks
+3. Install dependencies:
 
+```bash
+pip install -r requirements.txt
+```
+
+4. Run the application locally:
+
+```bash
+python service/run.py
+```
+
+## Project Structure
+
+- `service/` - Main application code
+- `tests/` - Unit and integration tests
+- `.github/` - GitHub Actions workflows
+- `.tekton/` - Tekton pipeline definitions
+- `labs/` - Lab exercises and documentation
+
+## CI/CD Pipeline
+
+The project implements a complete CI/CD pipeline that includes:
+
+- Automated testing
+- Code quality checks
+- Container image building
+- Kubernetes deployment
+- Environment promotion
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a Pull Request
 
 ## License
 
-Licensed under the Apache License. See [LICENSE](/LICENSE)
+This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
 
-## Author
+## Acknowledgments
 
-Skills Network
+- Based on IBM-CD0215EN-SkillsNetwork Introduction to CI/CD
+- Instructor: John Rofrano, Senior Technical Staff Member, DevOps Champion, @ IBM Research
 
-## <h3 align="center"> © IBM Corporation 2023. All rights reserved. <h3/>
+## <h3 align="center"> © IBM Corporation 2022. All rights reserved. <h3/>
