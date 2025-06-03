@@ -3,6 +3,7 @@ Werkzeug==2.1.2
 
 # Runtime dependencies
 Flask==2.1.2
+click==8.1.7
 python-dotenv==0.20.0
 
 # Runtime tools
