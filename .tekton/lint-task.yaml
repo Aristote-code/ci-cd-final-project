@@ -16,6 +16,6 @@ spec:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
         echo "Running flake8..."
-        python -m flake8 service
+        python -m flake8 .
         echo "Running pylint..."
-        python -m pylint service
+        python -m pylint service tests
