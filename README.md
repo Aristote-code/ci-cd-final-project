@@ -2,9 +2,9 @@
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Python 3.9](https://img.shields.io/badge/Python-3.9-green.svg)](https://shields.io/)
-[![CI/CD Pipeline](https://github.com/yourusername/ci-cd-final-project/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/yourusername/ci-cd-final-project/actions/workflows/ci-cd.yml)
+[![CI/CD Pipeline](https://github.com/yourusername/ci-cd-final-project/actions/workflows/ci.yml/badge.svg)](https://github.com/yourusername/ci-cd-final-project/actions/workflows/ci.yml)
 
-This project demonstrates a complete CI/CD pipeline implementation using Tekton, GitHub Actions, and Kubernetes. It serves as a practical example of modern DevOps practices and continuous integration/continuous deployment workflows.
+This project demonstrates a complete CI/CD pipeline implementation using Tekton, GitHub Actions, and Kubernetes. It includes a sample Flask counter service. It serves as a practical example of modern DevOps practices and continuous integration/continuous deployment workflows.
 
 ## Features
 
@@ -13,6 +13,7 @@ This project demonstrates a complete CI/CD pipeline implementation using Tekton,
 - Kubernetes integration
 - GitHub Actions workflow automation
 - Tekton pipeline implementation
+- File-based data persistence for counters (`counters.json`)
 
 ## Prerequisites
 
@@ -46,9 +47,23 @@ pip install -r requirements.txt
 
 4. Run the application locally:
 
+   The application uses Gunicorn as specified in the `Procfile`. You can run it using:
+   ```bash
+   honcho start
+   ```
+   Alternatively, for development, you can use Flask's built-in server (ensure `FLASK_APP` environment variable is set to `service:app`):
+   ```bash
+   export FLASK_APP=service:app  # On Windows: set FLASK_APP=service:app
+   flask run --host=0.0.0.0 --port=8000
+   ```
+
+## Running Tests
+
+To run the automated tests, use the following command:
 ```bash
-python service/run.py
+nosetests -v --with-spec --spec-color
 ```
+**Note on Python 3.10+:** `nosetests` version `1.3.7` (as used in this project) has an incompatibility with Python 3.10+ (`AttributeError: module 'collections' has no attribute 'Callable'`). The CI pipeline runs tests using Python 3.9, where this issue does not occur. If running locally on Python 3.10+, you might encounter this error.
 
 ## Project Structure
 
